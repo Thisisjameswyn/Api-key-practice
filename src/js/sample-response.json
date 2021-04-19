@@ -1,0 +1,168 @@
+{
+  "status": "success",
+  "photos": [
+      {
+          "url": "https://wegotthiscovered.com/wp-content/uploads/2016/05/Andre-The-Giant.jpg",
+          "pid": "F@0f9f55793c944286742882764d9e3b9c_b447d5c408e98",
+          "width": 1240,
+          "height": 744,
+          "tags": [
+              {
+                  "uids": [],
+                  "label": null,
+                  "confirmed": false,
+                  "manual": false,
+                  "width": 25.89,
+                  "height": 61.02,
+                  "yaw": -3,
+                  "roll": 1,
+                  "pitch": 27,
+                  "attributes": {
+                      "face": {
+                          "value": "true",
+                          "confidence": 96
+                      },
+                      "gender": {
+                          "value": "male",
+                          "confidence": 25
+                      },
+                      "glasses": {
+                          "value": "false",
+                          "confidence": 10
+                      },
+                      "dark_glasses": {
+                          "value": "false",
+                          "confidence": 19
+                      },
+                      "smiling": {
+                          "value": "false",
+                          "confidence": 24
+                      },
+                      "age_est": {
+                          "value": "34",
+                          "confidence": 50
+                      },
+                      "mood": {
+                          "value": "disgusted",
+                          "confidence": 89
+                      },
+                      "lips": {
+                          "value": "sealed",
+                          "confidence": 30
+                      },
+                      "eyes": {
+                          "value": "open",
+                          "confidence": 43
+                      },
+                      "neutral_mood": {
+                          "value": "false",
+                          "confidence": 2
+                      },
+                      "anger": {
+                          "value": "false",
+                          "confidence": 0
+                      },
+                      "disgust": {
+                          "value": "true",
+                          "confidence": 89
+                      },
+                      "fear": {
+                          "value": "false",
+                          "confidence": 4
+                      },
+                      "happiness": {
+                          "value": "false",
+                          "confidence": 3
+                      },
+                      "sadness": {
+                          "value": "false",
+                          "confidence": 2
+                      },
+                      "surprise": {
+                          "value": "false",
+                          "confidence": 1
+                      },
+                      "ethnicity": {
+                          "white": {
+                              "value": "true",
+                              "confidence": 75
+                          },
+                          "black": {
+                              "value": "false",
+                              "confidence": 3
+                          },
+                          "asian": {
+                              "value": "false",
+                              "confidence": 10
+                          },
+                          "indian": {
+                              "value": "false",
+                              "confidence": 3
+                          },
+                          "hispanic": {
+                              "value": "false",
+                              "confidence": 9
+                          }
+                      },
+                      "beard": {
+                          "value": "true",
+                          "confidence": 21
+                      },
+                      "mustache": {
+                          "value": "false",
+                          "confidence": 45
+                      },
+                      "hat": {
+                          "value": "true",
+                          "confidence": 26
+                      },
+                      "liveness": {
+                          "value": "true",
+                          "confidence": 62
+                      }
+                  },
+                  "points": null,
+                  "similarities": null,
+                  "tid": "TEMP_F@0f9f55793c9442867428827602850137_b447d5c408e98_52.02_41.80_0_1",
+                  "recognizable": true,
+                  "center": {
+                      "x": 52.02,
+                      "y": 41.8
+                  },
+                  "eye_left": {
+                      "x": 57.66,
+                      "y": 30.91,
+                      "confidence": 95,
+                      "id": 449
+                  },
+                  "eye_right": {
+                      "x": 45.4,
+                      "y": 30.24,
+                      "confidence": 96,
+                      "id": 450
+                  },
+                  "mouth_center": {
+                      "x": 50.73,
+                      "y": 48.92,
+                      "confidence": 92,
+                      "id": 615
+                  },
+                  "nose": {
+                      "x": 50.89,
+                      "y": 34.14,
+                      "confidence": 91,
+                      "id": 403
+                  }
+              }
+          ]
+      }
+  ],
+  "usage": {
+      "used": 1,
+      "remaining": 99,
+      "limit": 100,
+      "reset_time": 1618831519,
+      "reset_time_text": "Mon, 19 April 2021 11:25:19 +0000"
+  },
+  "operation_id": "525e61be5a6743299ab908fb752040a5"
+}

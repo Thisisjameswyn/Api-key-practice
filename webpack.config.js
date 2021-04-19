@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require(`html-webpack-plugin`)
 const { CleanWebpackPlugin } = require(`clean-webpack-plugin`)
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: `./src/js/app.js`,
@@ -16,12 +17,17 @@ module.exports = {
       filename: `index.html`, // output file
       inject: true,
     }),
+    new Dotenv()
   ],
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/,
         use: [`style-loader`, `css-loader`, `sass-loader`],
+      },
+      {
+        test: /\.css$/,
+        use: [`style-loader`, `css-loader`],
       },
       {
         test: /\.(svg|gif|png|eot|woff(2)?|ttf)$/,

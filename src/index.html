@@ -5,12 +5,12 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
+  <body class="container">
       <h1>Image stuff</h1>
-      <form>
+      <form id="picSubmit">
         <label for="PictureURL">https://</label>
         <input id="pictureURL" type="text" placeholder="Enter url for image">
-        <button type="submit" id="pictureSubmit">Submit Pic</button>
+        <button class="btn btn-success" type="submit" id="pictureSubmit">Submit Pic</button>
       </form>
   </body>
 </html>
