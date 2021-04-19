@@ -7,50 +7,53 @@ import $ from 'jquery'
 // BIZ
 
 //DATA
-import sampleResponseToDetect from './sample-response.json'
+// import sampleResponse from './sample-response.json'
 
 
 $(document).ready(function() {
-  $('#picSubmit').submit(function() {
-    const city = $('#location').val();
-    $('#location').val("");
+  $('#picSubmit').submit(function(event) {
+    const imageUrlFromUser = $("#pictureURL").val();
+    
+    let request = new XMLHttpRequest();
+    const url = `http://api.skybiometry.com/fc/faces/detect.JSON?api_key=${process.env.API_KEY}&api_secret=${process.env.API_SECRET}&attributes=all&urls=${imageUrlFromUser}`;
 
-    // const imageUrlFromUser = $("#pictureURL").val();
-    //image from user
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        appendSummaryOfAttributes(response);
+      }
+    };
 
-    // let request = new XMLHttpRequest();
-    // const url = `http://api.skybiometry.com/fc/faces/detect.JSON?api_key=${process.env.API_KEY}&api_secret=${process.env.API_SECRET}&attributes=all&urls=${imageUrlFromUser}`;
+    request.open("GET", url, true);
+    request.send();
 
-    // request.onreadystatechange = function() {
-    //   if (this.readyState === 4 && this.status === 200) {
-    //     const response = JSON.parse(this.responseText);
-    //     getElements(response);
-    //   }
-    // };
-
-    // request.open("GET", url, true);
-    // request.send();
-
-   
+   event.preventDefault()
   });
 });
 
-function appendSummaryOfAttributes(responseToDetect) {
-  // const { attributes } = response.photos[0].tags[0]
-  // const attributes = response.photos[0].tags[0].attributes
-  // const attributesClone = { ...response.photos[0].tags[0].attributes }
 
-  const { attributes } = responseToDetect.photos[0].tags[0]
-  // const attributesEntries = Object.entries(attributes)
+function appendSummaryOfAttributes(response) {
 
-  const angerLevel = attributes.anger.confidence;
+  const { attributes } = response.photos[0].tags[0]
+  console.log(attributes);
 
-  // console.log(responseToDetect.photos[0].tags[0].width)
-  // console.log(width) // same as previous line
-  // console.log(attributes)
-  // console.log(attributesEntries)
-  // $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-  // $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
-  $('body').append(`Your anger level is: ${angerLevel}`);
+  const { neutral_mood, anger, disgust, fear, sadness, happiness, surprise } = attributes
+
+  const $neutralLevel = $('<div/>').text(`Your neutrality level is: ${neutral_mood.confidence}`);
+  const $angerLevel = $('<div/>').text(`Your anger level is: ${anger.confidence}`);
+  const $disgustLevel = $('<div/>').text(`Your disgust level is: ${disgust.confidence}`).attr('id', 'blah');
+  const $fearLevel = $('<div/>').text(`Your fear level is: ${fear.confidence}`);
+  const $sadnessLevel = $('<div/>').text(`Your sadness level is: ${sadness.confidence}`);
+  const $happinessLevel = $('<div/>').text(`Your happiness level is: ${happiness.confidence}`);
+  const $surpriseLevel = $('<div/>').text(`Your surprise level is: ${surprise.confidence}`);
+
+  $('body').append(
+    $neutralLevel,
+    $angerLevel,
+    $disgustLevel,
+    $fearLevel,
+    $sadnessLevel,
+    $happinessLevel,
+    $surpriseLevel
+    );
 }
-appendSummaryOfAttributes(sampleResponseToDetect)
